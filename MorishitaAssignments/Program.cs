@@ -35,6 +35,11 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// alternate default route for the Assignments
+app.MapControllerRoute(
+    name: "materialRoute",
+    pattern: "{controller=Home}/{action=Index}/{id?}/{slug?}");
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

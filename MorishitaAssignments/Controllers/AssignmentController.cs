@@ -9,6 +9,9 @@ namespace MorishitaAssignments.Controllers
 
         public AssignmentController(StudentContext ctx) => context = ctx;
 
+        
+
+        [HttpGet]
         public IActionResult Details(int id)
         {
             ViewBag.AssignmentIds = context.Assignments.ToList();

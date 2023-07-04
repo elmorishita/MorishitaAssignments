@@ -24,17 +24,20 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Assignments" asp-action="Assignments">Assignments</a>
+                        </li>
                         <li>
-                            <form>
-                                <select id="dropdown" onchange="this.form.submit()">
+                            @*<form>*@
+@*                                <select id="dropdown" onchange="this.form.submit()">
                                     <option value="">-- Select --</option>
                                     @foreach (var item in Model.AssignmentName.ToList())
                                     {
                                         <option value="@Url.Action("Details", "Assignments", new { id = item })">@Model.AssignmentId</option>
                                     }
-                                </select>
+                                </select>*@
                                 
-                            </form>
+                        @*    </form>*@
                         </li>
                     </ul>
                 </div>

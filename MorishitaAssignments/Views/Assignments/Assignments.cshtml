@@ -1,36 +1,52 @@
-﻿@model Assignments
+﻿@model List<Assignments>
 @{
     ViewData["Title"] = "Assignments Page";
 }
-
 
 <!--
     Author: Elijah Morishita
     Date: 7/4/2023
     Assignments Page
 -->
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col"><!--col 1-->
+        <h2>Assignments</h2>
+        </div><!--Close col-->
+    </div><!--close row-->
+            
+    <div class="row">
+        <div class="col"><!--col 1-->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                    <th>AssignmentId</th>
+                    <th>AssignmentName</th>
+                    <th>AccessLevel</th>
+                    <th>Link</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var AssignItem in Model)
+                    {
+                        <tr>
+                        <td>@AssignItem.AssignmentId</td>
+                        <td>@AssignItem.AssignmentName</td>
+                        <td>@AssignItem.AccessLevel</td>
+                        <td>@AssignItem.Link</td>
+                            <td>
+                            <a asp-controller="Assignments" asp-action="Details" asp-route-id="@AssignItem.AssignmentId" asp-route-slug="@AssignItem.Slug">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!--Close col-->
+    </div><!--close row-->
 
-<br>
-<br>
-<br>
-
-<div class="row">
-    <div class="col"><!--col 1-->
-        <div class="mb-2">
-            <h2>@Model.AssignmentName</h2>
-        </div>
-    </div><!--Close col-->
-</div><!--close row-->
-
-<div class="row">
-    <div class="col"><!--col 1-->
-        <div>ID: @Model.AssignmentId</div>
-        <div>Access Level: @Model.AccessLevel</div>
-        <br>
-        <a asp-controller="Home" asp-action="Index">Home</a>
-    </div><!--Close col-->
-</div><!--close row-->
-
-<br>
-<br>
-<br>
+    <br>
+    <br>
+    <br>
