@@ -18,10 +18,9 @@ namespace MorishitaAssignments.Controllers
         }
 
         [HttpGet]
-        public IActionResult Assignments()
+        public IActionResult Privacy()
         {
-            var assign = context.Assignments.OrderBy(r => r.AssignmentId).ToList();
-            return View(assign);
+            return View();
         }
 
     }

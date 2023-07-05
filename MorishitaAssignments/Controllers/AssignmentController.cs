@@ -9,13 +9,18 @@ namespace MorishitaAssignments.Controllers
 
         public AssignmentController(StudentContext ctx) => context = ctx;
 
-        
+        [HttpGet]
+        public IActionResult AssignmentsHome()
+        {
+            var assign = context.Assigns.OrderBy(r => r.AssignmentId).ToList();
+            return View(assign);
+        }
 
         [HttpGet]
         public IActionResult Details(int id)
         {
-            ViewBag.AssignmentIds = context.Assignments.ToList();
-            Assignments assignments = context.Assignments.Where(a => a.AssignmentId == id).FirstOrDefault() ?? new Assignments();
+            //ViewBag.AssignmentIds = context.Assigns.ToList();
+            Assignments assignments = context.Assigns.Where(a => a.AssignmentId == id).FirstOrDefault() ?? new Assignments();
             return View(assignments);
         }
     }
