@@ -41,6 +41,50 @@ namespace MorishitaAssignments.Models
                   AssignmentName = "Assignment 8.5",
               }
               );
+
+            modelBuilder.Entity<Assignments>().HasData(
+              new Student
+              {
+                  Id = 1,
+                  FirstName = "Sharean",
+                  LastName = "Vesey",
+                  Grade = "12",
+                  StudentAccessLevel = 9
+              }
+              ); ;
+
+            modelBuilder.Entity<Assignments>().HasData(
+            new Student
+            {
+                Id = 2,
+                FirstName = "Dewayne",
+                LastName = "Mori",
+                Grade = "9",
+                StudentAccessLevel = 6
+            }
+            );
+
+            modelBuilder.Entity<Assignments>().HasData(
+            new Student
+            {
+                Id = 3,
+                FirstName = "Esiah",
+                LastName = "Lonnell",
+                Grade = "9",
+                StudentAccessLevel = 6
+            }
+            );
+
+            modelBuilder.Entity<Assignments>().HasData(
+            new Student
+            {
+                Id = 4,
+                FirstName = "Elizabeth",
+                LastName = "Shalonda",
+                Grade = "8",
+                StudentAccessLevel = 2
+            }
+            );
         }
     }
 }
