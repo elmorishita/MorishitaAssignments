@@ -9,8 +9,6 @@ namespace MorishitaAssignments.Models
         public int AssignmentId { get; set; }
 
         [Required]
-        public int AccessLevel { get; set; } = 0;
-        [Required]
         public string AssignmentName { get; set; } = string.Empty;
         [Required]
         public string Link { get; set; } = string.Empty;

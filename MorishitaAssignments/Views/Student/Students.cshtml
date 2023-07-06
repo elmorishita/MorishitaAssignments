@@ -14,7 +14,24 @@
 <div class="row">
     <div class="col">
         <!--col 1-->
-        <h2>Students</h2>
+        @{
+            if(ViewBag.Access < 2){
+                <h2>"Students - You do not have a sufficient access level to view this data"</h2>
+                <p>Your current access level is: @ViewBag.Access</p>
+                Layout = "_AccessOneLayout";
+            }
+            else
+            {
+                <h2>Students</h2>
+                <p>Your current access level is: @ViewBag.Access</p>
+                Layout = "_AccessTwoLayout";
+                if (ViewBag.Access >= 8){
+                    <h4>Welcome Admin</h4>
+                    Layout = "_AccessThreeLayout";
+                }
+            }
+        }
+        
     </div><!--Close col-->
 </div><!--close row-->
 
@@ -28,7 +45,6 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Grade</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -36,9 +52,22 @@
                 {
                     <tr>
                         <td>@StudentItem.Id</td>
-                        <td>@StudentItem.FirstName</td>
-                        <td>@StudentItem.LastName</td>
-                        <td>@StudentItem.Grade</td>
+                        @{
+                           
+                            if (ViewBag.Access >= 2 && ViewBag.Access < 8)
+                            {
+                                <td>@StudentItem.FirstName</td>
+                                <td>@StudentItem.LastName</td>
+                            }
+                            if (ViewBag.Access > 8)
+                            {
+                                <td>@StudentItem.FirstName</td>
+                                <td>@StudentItem.LastName</td>
+                                <td>@StudentItem.Grade</td>
+                            }
+                        }
+                        
+                        
                     </tr>
                 }
             </tbody>
