@@ -42,7 +42,7 @@ namespace MorishitaAssignments.Models
               }
               );
 
-            modelBuilder.Entity<Assignments>().HasData(
+            modelBuilder.Entity<Student>().HasData(
               new Student
               {
                   Id = 1,
@@ -53,7 +53,7 @@ namespace MorishitaAssignments.Models
               }
               ); ;
 
-            modelBuilder.Entity<Assignments>().HasData(
+            modelBuilder.Entity<Student>().HasData(
             new Student
             {
                 Id = 2,
@@ -64,7 +64,7 @@ namespace MorishitaAssignments.Models
             }
             );
 
-            modelBuilder.Entity<Assignments>().HasData(
+            modelBuilder.Entity<Student>().HasData(
             new Student
             {
                 Id = 3,
@@ -75,7 +75,7 @@ namespace MorishitaAssignments.Models
             }
             );
 
-            modelBuilder.Entity<Assignments>().HasData(
+            modelBuilder.Entity<Student>().HasData(
             new Student
             {
                 Id = 4,

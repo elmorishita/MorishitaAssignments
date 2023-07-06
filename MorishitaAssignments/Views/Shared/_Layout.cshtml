@@ -28,13 +28,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Assignments" asp-action="Assignments">Assignments</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Students">Students</a>
                         </li>
-
+                        <li>
+                            <select onChange="window.location.href=this.value">
+                                <option value=""></option>
+                                <option value="../../Assignments/Assignments">Assignment 6.1</option>
+                            </select>
+                        </li>
                     </ul>
+                    
                 </div>
             </div>
         </nav>
