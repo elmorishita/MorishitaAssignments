@@ -1,16 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MorishitaAssignments.Models;
 
+
 namespace MorishitaAssignments.Controllers
 {
-    public class AssignmentController : Controller
+    public class AssignmentsController : Controller
     {
         public StudentContext context { get; set; }
 
-        public AssignmentController(StudentContext ctx) => context = ctx;
+        public AssignmentsController(StudentContext ctx) => context = ctx;
 
         [HttpGet]
-        public IActionResult AssignmentsHome()
+        public IActionResult Assignments()
         {
             var assign = context.Assigns.OrderBy(r => r.AssignmentId).ToList();
             return View(assign);
