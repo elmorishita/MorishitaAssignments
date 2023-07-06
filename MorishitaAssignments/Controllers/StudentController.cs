@@ -12,6 +12,7 @@ namespace MorishitaAssignments.Controllers
         [HttpGet]
         public IActionResult Students()
         {
+            ViewBag.Access = 9; // This determines the students routing access
             var student = context.Students.OrderBy(s => s.Id).ToList();
             return View(student);
         }

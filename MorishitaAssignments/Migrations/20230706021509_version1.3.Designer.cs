@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MorishitaAssignments.Models;
 
@@ -10,9 +11,10 @@ using MorishitaAssignments.Models;
 namespace MorishitaAssignments.Migrations
 {
     [DbContext(typeof(StudentContext))]
-    partial class StudentContextModelSnapshot : ModelSnapshot
+    [Migration("20230706021509_version1.3")]
+    partial class version13
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,6 +30,9 @@ namespace MorishitaAssignments.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AssignmentId"), 1L, 1);
+
+                    b.Property<int>("AccessLevel")
+                        .HasColumnType("int");
 
                     b.Property<string>("AssignmentName")
                         .IsRequired()
@@ -45,18 +50,21 @@ namespace MorishitaAssignments.Migrations
                         new
                         {
                             AssignmentId = 1,
+                            AccessLevel = 1,
                             AssignmentName = "Assignment 6.1",
                             Link = ""
                         },
                         new
                         {
                             AssignmentId = 2,
+                            AccessLevel = 5,
                             AssignmentName = "Assignment 7.1",
                             Link = ""
                         },
                         new
                         {
                             AssignmentId = 3,
+                            AccessLevel = 9,
                             AssignmentName = "Assignment 8.5",
                             Link = ""
                         });

@@ -13,5 +13,7 @@ namespace MorishitaAssignments.Models
         public string LastName { get; set; } = string.Empty;
         [Required]
         public string Grade { get; set; } = string.Empty;
+        [Required]
+        public int StudentAccessLevel { get; set; } = 0;
     }
 }

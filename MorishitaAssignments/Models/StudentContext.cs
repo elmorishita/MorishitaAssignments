@@ -19,7 +19,6 @@ namespace MorishitaAssignments.Models
                 new Assignments
                 {
                     AssignmentId = 1,
-                    AccessLevel = 1,
                     AssignmentName = "Assignment 6.1",
                 }
                 );
@@ -28,7 +27,6 @@ namespace MorishitaAssignments.Models
                new Assignments
                {
                    AssignmentId = 2,
-                   AccessLevel = 5,
                    AssignmentName = "Assignment 7.1",
                }
                );
@@ -37,10 +35,53 @@ namespace MorishitaAssignments.Models
               new Assignments
               {
                   AssignmentId = 3,
-                  AccessLevel = 9,
                   AssignmentName = "Assignment 8.5",
               }
               );
+
+            modelBuilder.Entity<Student>().HasData(
+              new Student
+              {
+                  Id = 1,
+                  FirstName = "Sharean",
+                  LastName = "Vesey",
+                  Grade = "12",
+                  StudentAccessLevel = 9
+              }
+              ); ;
+
+            modelBuilder.Entity<Student>().HasData(
+            new Student
+            {
+                Id = 2,
+                FirstName = "Dewayne",
+                LastName = "Mori",
+                Grade = "9",
+                StudentAccessLevel = 6
+            }
+            );
+
+            modelBuilder.Entity<Student>().HasData(
+            new Student
+            {
+                Id = 3,
+                FirstName = "Esiah",
+                LastName = "Lonnell",
+                Grade = "9",
+                StudentAccessLevel = 6
+            }
+            );
+
+            modelBuilder.Entity<Student>().HasData(
+            new Student
+            {
+                Id = 4,
+                FirstName = "Elizabeth",
+                LastName = "Shalonda",
+                Grade = "8",
+                StudentAccessLevel = 2
+            }
+            );
         }
     }
 }

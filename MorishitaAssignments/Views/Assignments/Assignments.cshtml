@@ -6,6 +6,8 @@
     Date: 7/4/2023
     Assignments Page
 -->
+
+
     <br>
     <br>
     <br>
@@ -22,7 +24,6 @@
                     <tr>
                     <th>AssignmentId</th>
                     <th>AssignmentName</th>
-                    <th>AccessLevel</th>
                     <th>Link</th>
                         <th></th>
                     </tr>
@@ -33,10 +34,9 @@
                         <tr>
                         <td>@AssignItem.AssignmentId</td>
                         <td>@AssignItem.AssignmentName</td>
-                        <td>@AssignItem.AccessLevel</td>
                         <td>@AssignItem.Link</td>
                             <td>
-                            <a asp-controller="Assignments" asp-action="Details" asp-route-id="@AssignItem.AssignmentId" asp-route-slug="@AssignItem.Slug">Details</a>
+                                <a asp-controller="Assignments" asp-action="Details" asp-route-id="@AssignItem.AssignmentId" asp-route-slug="@AssignItem.Slug">Details</a>
                             </td>
                         </tr>
                     }
