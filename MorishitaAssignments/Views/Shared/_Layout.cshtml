@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MorishitaAssignments</title>
+    <title>@ViewData["Title"] - Morishita Assignments</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MorishitaAssignments.styles.css" asp-append-version="true" />
@@ -25,20 +25,15 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Assignments" asp-action="Assignments">Assignments</a>
                         </li>
-                        <li>
-                            @*<form>*@
-@*                                <select id="dropdown" onchange="this.form.submit()">
-                                    <option value="">-- Select --</option>
-                                    @foreach (var item in Model.AssignmentName.ToList())
-                                    {
-                                        <option value="@Url.Action("Details", "Assignments", new { id = item })">@Model.AssignmentId</option>
-                                    }
-                                </select>*@
-                                
-                        @*    </form>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Students">Students</a>
                         </li>
+
                     </ul>
                 </div>
             </div>
@@ -52,7 +47,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - MorishitaAssignments - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - MorishitaAssignments 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

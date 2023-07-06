@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MorishitaAssignments.Models;
 
@@ -10,9 +11,10 @@ using MorishitaAssignments.Models;
 namespace MorishitaAssignments.Migrations
 {
     [DbContext(typeof(StudentContext))]
-    partial class StudentContextModelSnapshot : ModelSnapshot
+    [Migration("20230705145828_ver1.2")]
+    partial class ver12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,7 +44,7 @@ namespace MorishitaAssignments.Migrations
 
                     b.HasKey("AssignmentId");
 
-                    b.ToTable("Assigns");
+                    b.ToTable("Assignments");
 
                     b.HasData(
                         new

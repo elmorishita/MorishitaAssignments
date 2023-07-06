@@ -9,7 +9,7 @@ namespace MorishitaAssignments.Models
         { }
 
         public DbSet<Student> Students { get; set; } = null!;
-        public DbSet<Assignments> Assignments { get; set; } = null!;
+        public DbSet<Assignments> Assigns { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
